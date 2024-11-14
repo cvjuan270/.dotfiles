@@ -41,16 +41,20 @@ sudo apt install curl
 sudo apt install git
 sudo apt install vim -y
 sudo apt install fish -y
+sudo apt install ripgrep fd-find luarocks -y
+sudo apt install npm -y
+sudo npm install -g tree-sitter-cli
+sudo apt install maven -y
 echo "-------------------Instlando brave-browser---------------------"
-#curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-#echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-#apt update
-#apt install brave-browser -y
+curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+apt update
+apt install brave-browser -y
 
 echo "-------------------Instalando nvim---------------------"
-# curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-#sudo rm -rf /opt/nvim
-#sudo tar -C /opt -xzf nvim-linux64.tar.gz
+ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
 echo "export PATH="$PATH:/opt/nvim-linux64/bin"" >> ~/.bashrc
 source ~/.bashrc
 

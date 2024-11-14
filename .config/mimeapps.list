@@ -1,0 +1,18 @@
+[Default Applications]
+text/x-python=org.xfce.mousepad.desktop
+application/json=vim.desktop
+application/octet-stream=org.xfce.mousepad-settings.desktop
+
+[Added Associations]
+text/x-python=vim.desktop;org.xfce.mousepad.desktop;
+application/xslt+xml=vim.desktop;org.xfce.mousepad.desktop;libreoffice-xsltfilter.desktop;firefox-esr.desktop;
+application/schema+json=org.xfce.mousepad.desktop;
+application/json=org.xfce.mousepad.desktop;code.desktop;brave-browser.desktop;firefox-esr.desktop;vim.desktop;
+application/sql=vim.desktop;
+text/csv=vim.desktop;libreoffice-calc.desktop;
+text/html=vim.desktop;
+application/javascript=vim.desktop;
+text/x-gettext-translation=org.xfce.mousepad.desktop;vim.desktop;
+application/octet-stream=vim.desktop;org.xfce.mousepad-settings.desktop;
+text/x-gettext-translation-template=vim.desktop;
+image/jpeg=org.xfce.ristretto.desktop;

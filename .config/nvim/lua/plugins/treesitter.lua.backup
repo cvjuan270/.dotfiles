@@ -1,0 +1,124 @@
+return {
+  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "gitignore",
+        "scss",
+        "css",
+        "sql",
+        "python",
+        "xml",
+        "html",
+        "javascript",
+      },
+
+      -- matchup = {
+      -- 	enable = true,
+      -- },
+
+      -- https://github.com/nvim-treesitter/playground#query-linter
+      query_linter = {
+        enable = true,
+        use_virtual_text = true,
+        lint_events = { "BufWrite", "CursorHold" },
+      },
+
+      playground = {
+        enable = true,
+        disable = {},
+        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+        persist_queries = true, -- Whether the query persists across vim sessions
+        keybindings = {
+          toggle_query_editor = "o",
+          toggle_hl_groups = "i",
+          toggle_injected_languages = "t",
+          toggle_anonymous_nodes = "a",
+          toggle_language_display = "I",
+          focus_language = "f",
+          unfocus_language = "F",
+          update = "R",
+          goto_node = "<cr>",
+          show_help = "?",
+        },
+      },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      -- MDX
+      vim.filetype.add({
+        extension = {
+          mdx = "mdx",
+        },
+      })
+      vim.treesitter.language.register("markdown", "mdx")
+    end,
+  },
+  -- ------------------------------------
+  -- ODOO 17 -                        ---
+  -- ------------------------------------
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeChekingMode = "basic",
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                -- Sets paths for include odoo
+                extraPaths = {
+                  vim.fn.expand("/home/juand/work/odoo-dev/odoo17/odoo"),
+                  vim.fn.expand("/home/juand/work/odoo-dev/odoo17/odoo/addons"),
+                  vim.fn.expand("/home/juand/work/odoo-dev/odoo17/dev-addons17/"),
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   opts = function(_, opts)
+  --     local null_ls = require("null-ls")
+  --     opts.sources = opts.sources or {}
+  --     vim.list_extend(opts.sources, {
+  --       -- Formateo con Black
+  --       null_ls.builtins.formatting.black,
+  --       -- Linting con Pylint configurado para Odoo
+  --       null_ls.builtins.diagnostics.pylint.with({
+  --         extra_args = {
+  --           "--load-plugins=pylint_odoo",
+  --           "--disable=all",
+  --           "--enable=odoolint,F,E,W,R",
+  --           "--valid-odoo-versions=17.0",
+  --         },
+  --       }),
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "danymat/neogen",
+  --   dependencies = "nvim-treesitter/nvim-treesitter",
+  --   config = function()
+  --     require("neogen").setup({
+  --       enable = true,
+  --       languages = {
+  --         python = {
+  --           template = {
+  --             annotation_convention = "numpydoc",
+  --           },
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
+  -- END ODOO 17
+}

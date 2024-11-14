@@ -1,0 +1,27 @@
+{
+  "prefs": {
+    "ExperimentId": "3a701771-afa5-45a7-9fb6-256eec19e924",
+    "TelemetryEnabled": "true",
+    "AIRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":1,\"next_refresh_time\":\"2024-12-13T14:59:36.313147Z\",\"is_unlimited\":false}",
+    "ChangelogVersions": "{\"v0.2024.09.24.08.02.stable_01\":true,\"v0.2024.10.08.08.02.stable_01\":true,\"v0.2024.10.08.08.02.stable_02\":true}",
+    "OverrideOpacity": "82",
+    "ShowIndicatorsButton": "true",
+    "ShouldDimInactivePanes": "false",
+    "FontName": "\"JetBrainsMono Nerd Font\"",
+    "CrashReportingEnabled": "true",
+    "EnforceMinimumContrast": "\"Always\"",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "AliasExpansionBannerSeen": "true",
+    "FontSize": "15.0",
+    "SameLinePromptBlockState": "\"DoNotShow\"",
+    "WelcomeTipsFeaturesUsed": "[{\"Hint\":\"BlockAction\"},{\"Action\":\"AiCommandSearch\"},{\"Hint\":\"CreateBlock\"},{\"Action\":\"CommandSearch\"},{\"Hint\":\"BlockSelect\"}]",
+    "NotebookFontSize": "14.0",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "AutosuggestionAcceptedCount": "2",
+    "AgentModeOnboardingBlockShown": "true",
+    "ShowHintText": "false",
+    "AIAssistantRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":2,\"next_refresh_time\":\"2024-10-13T05:13:50.882879Z\",\"is_unlimited\":false}",
+    "ShowJumpToBottomOfBlockButton": "false",
+    "FocusPaneOnHover": "true"
+  }
+}
