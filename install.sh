@@ -63,4 +63,3 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 echo "--------------------Instalando Accesorios--------------------"
 sudo apt install screenkey -y
-cp .screenkey/screnkey.json ~/.config/screenkey.json
