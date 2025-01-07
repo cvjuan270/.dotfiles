@@ -9,7 +9,7 @@ sudo mvn clean install
 ## Enabled tab-to-click on Debian "laptop Lenovo notepad"
 `sudo apt install xserver-xorg-input-libinput`
 `sudo vim /etc/X11/xorg.conf.d/40-libinput.conf`
-- copy to 
+- copy to
 `Section "InputClass"
         Identifier "libinput touchpad catchall"
         MatchIsTouchpad "on"
