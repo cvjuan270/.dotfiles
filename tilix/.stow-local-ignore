@@ -1,0 +1,2 @@
+# ~/.dotfiles/tilix/.stow-local-ignore
+.*\.dconf$   # Ignora todos los archivos que terminen en .dconf

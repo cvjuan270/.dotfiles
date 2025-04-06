@@ -8,9 +8,12 @@ echo "🔍 Verificando dependencias..."
 
 # Lista de paquetes necesarios (ajusta según tu setup)
 DEPENDENCIES=(
-  "stow"          # Para gestionar dotfiles
-  "git"           # Para clonar el repositorio (si es necesario)
-  "nvim"           # Editor (opcional)
+  "dconf-cli" # Configuration storage system
+  "dbus-x11"
+  "stow"  # Para gestionar dotfiles
+  "git"   # Para clonar el repositorio (si es necesario)
+  "nvim"  # Editor (opcional)
+  "tilix" # Terminal emulator
 )
 
 # Verificar e instalar dependencias faltantes
@@ -23,7 +26,7 @@ done
 
 # Función para instalar paquetes según la distro
 install_dependencies() {
-    sudo apt update && sudo apt install "${MISSING_DEPS[@]}" -y
+  sudo apt update && sudo apt install "${MISSING_DEPS[@]}" -y
 }
 
 # Instalando dependencias
@@ -34,11 +37,15 @@ else
   echo "📦 Dependencias Completas"
 fi
 
-
+# stow
 # Listar paquetes a enlazar
-packages=("nvim")
+packages=("nvim" "tilix")
 
-for pkg in "${packages[@]}";do
-	echo "Installing ${pkg}"
-	stow -vt ~ $pkg
+for pkg in "${packages[@]}"; do
+  echo "Installing ${pkg}"
+  stow -vt ~ $pkg
 done
+
+# dconf
+echo "Instalando dconf"
+dconf load /com/gexperts/Tilix/ <tilix/tilix.dconf
