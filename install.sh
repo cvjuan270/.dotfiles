@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # --- 1. Verificar/Instalar dependencias ---
 echo "🔍 Verificando dependencias..."
 # Lista de paquetes a enlazar
